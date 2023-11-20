@@ -43,7 +43,7 @@ import naylibgui
 import std/os
 when defined(windows):
   const dark = currentSourcePath().parentDir()/"../../styles/dark/style_dark_win.h"
-else
+else:
   const dark = currentSourcePath().parentDir()/"../../styles/dark/style_dark.h"
 
 # warping 
