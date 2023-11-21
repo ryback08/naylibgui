@@ -589,13 +589,13 @@ proc guiIconText*(iconId: int32 or GuiIconName, text: cstring): cstring {.cdecl,
 #----------------------------------------------------------------------------------------------------------
 # Container/separator controls, useful for controls organization
 #RAYGUIAPI int GuiWindowBox(rlRectangle bounds, const char *title);                                       // Window Box control, shows a window that can be closed
-proc guiWindowBox*(bounds: Rectangle; title: cstring): bool {.cdecl, importc: "GuiWindowBox", header: rayguiHeader, discardable.}
+proc guiWindowBox*(bounds: Rectangle; title: cstring): int32 {.cdecl, importc: "GuiWindowBox", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiGroupBox(rlRectangle bounds, const char *text);                                         // Group Box control with text name
-proc guiGroupBox*(bounds: Rectangle; text: cstring) {.cdecl, importc: "GuiGroupBox", header: rayguiHeader.}
+proc guiGroupBox*(bounds: Rectangle; text: cstring): int32 {.cdecl, importc: "GuiGroupBox", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiLine(rlRectangle bounds, const char *text);                                             // Line separator control, could contain text
-proc guiLine*(bounds: Rectangle; text: cstring) {.cdecl, importc: "GuiLine", header: rayguiHeader.}
+proc guiLine*(bounds: Rectangle; text: cstring): int32 {.cdecl, importc: "GuiLine", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiPanel(rlRectangle bounds, const char *text);                                            // Panel control, useful to group controls
-proc guiPanel*(bounds: Rectangle, text: cstring) {.cdecl, importc: "GuiPanel", header: rayguiHeader.}
+proc guiPanel*(bounds: Rectangle, text: cstring): int32 {.cdecl, importc: "GuiPanel", header: rayguiHeader, discardable.}
 ##  Panel control, useful to group controls
 #RAYGUIAPI int GuiTabBar(rlRectangle bounds, const char **text, int count, int *active);                  // Tab Bar control, returns TAB to be closed or -1
 #RAYGUIAPI int GuiScrollPanel(rlRectangle bounds, const char *text, rlRectangle content, Vector2 *scroll, rlRectangle *view); // Scroll Panel control
@@ -604,19 +604,19 @@ proc guiScrollPanel*(bounds: Rectangle; text: cstring, content: Rectangle, scrol
 
 # Basic controls set
 #RAYGUIAPI int GuiLabel(rlRectangle bounds, const char *text);                                            // Label control, shows text
-proc guiLabel*(bounds: Rectangle; text: cstring) {.cdecl, importc: "GuiLabel", header: rayguiHeader, discardable.}
+proc guiLabel*(bounds: Rectangle; text: cstring): int32 {.cdecl, importc: "GuiLabel", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiButton(rlRectangle bounds, const char *text);                                           // Button control, returns true when clicked
-proc guiButton*(bounds: Rectangle; text: cstring): bool {.cdecl, importc: "GuiButton", header: rayguiHeader, discardable.}
+proc guiButton*(bounds: Rectangle; text: cstring): int32 {.cdecl, importc: "GuiButton", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiLabelButton(rlRectangle bounds, const char *text);                                      // Label button control, show true when clicked
-proc guiLabelButton*(bounds: Rectangle; text: cstring): bool {.cdecl, importc: "GuiLabelButton", header: rayguiHeader, discardable.}
+proc guiLabelButton*(bounds: Rectangle; text: cstring): int32 {.cdecl, importc: "GuiLabelButton", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiToggle(rlRectangle bounds, const char *text, bool *active);                             // Toggle Button control, returns true when active
-proc guiToggle*(bounds: Rectangle; text: cstring; active: var bool): bool {.cdecl, importc: "GuiToggle", header: rayguiHeader, discardable.}
+proc guiToggle*(bounds: Rectangle; text: cstring; active: var bool): int32 {.cdecl, importc: "GuiToggle", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiToggleGroup(rlRectangle bounds, const char *text, int *active);                         // Toggle Group control, returns active toggle index
 proc guiToggleGroup*(bounds: Rectangle; text: cstring; active: var int32): int32 {.cdecl, importc: "GuiToggleGroup", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiToggleSlider(rlRectangle bounds, const char *text, int *active);                        // Toggle Slider control, returns true when clicked
 proc guiToggleSlider*(bounds: Rectangle; text: cstring; active: var int32): int32 {.cdecl, importc: "GuiToggleSlider", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiCheckBox(rlRectangle bounds, const char *text, bool *checked);                          // Check Box control, returns true when active
-proc guiCheckBox*(bounds: Rectangle; text: cstring; checked: var bool): bool {.cdecl, importc: "GuiCheckBox", header: rayguiHeader, discardable.}
+proc guiCheckBox*(bounds: Rectangle; text: cstring; checked: var bool): int32 {.cdecl, importc: "GuiCheckBox", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiComboBox(rlRectangle bounds, const char *text, int *active);                            // Combo Box control, returns selected item index
 proc guiComboBox*(bounds: Rectangle; text: cstring; active: var int32): int32 {.cdecl, importc: "GuiComboBox", header: rayguiHeader, discardable.}
 
@@ -626,7 +626,7 @@ proc guiDropdownBox*(bounds: Rectangle, text: cstring, active : var int32, editM
 #RAYGUIAPI int GuiSpinner(rlRectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode); // Spinner control, returns selected value
 proc guiSpinner*(bounds: Rectangle, text: cstring, value: var int32, minValue: int32, maxValue: int32, editMode: bool): int32{.cdecl, importc: "GuiSpinner", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiValueBox(rlRectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode); // Value Box control, updates input text with numbers
-proc guiValueBox*(bounds: Rectangle, text: cstring, value: var int32, minValue: int32, maxValue: int32, editMode: bool):int32 {.cdecl, importc: "GuiValueBox", header: rayguiHeader, discardable.}
+proc guiValueBox*(bounds: Rectangle, text: cstring, value: var int32, minValue: int32, maxValue: int32, editMode: bool): int32 {.cdecl, importc: "GuiValueBox", header: rayguiHeader, discardable.}
 #RAYGUIAPI int GuiTextBox(rlRectangle bounds, char *text, int textSize, bool editMode);                   // Text Box control, updates input text
 proc guiTextBox*(bounds: Rectangle, text: ptr cstring, textSize: int32, editMode: bool): int32 {.cdecl, importc: "GuiTextBox", header: rayguiHeader, discardable.}
   ## guiTextBox : use var text = create(cstring, nbdata) to allocate memory
