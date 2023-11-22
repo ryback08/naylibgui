@@ -1,7 +1,5 @@
 # naylibgui
-Raygui for Naylib (Raylib Nim)
-https://github.com/planetis-m/naylib
-
+Raygui for Naylib [Raylib Nim](https://github.com/planetis-m/naylib)
 
 
 Installation
