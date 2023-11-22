@@ -12,7 +12,7 @@ Examples
 i reproduce controlTestSuite.c in controlTestSuite.nim
 The majority of functions work ..... but Warning, everything doesn't work (guiListViewEx)
 
-https://github.com/ryback08/naylibgui/blob/main/exemples/examples/controls_test_suite/controls%20test%20suite%20-%20defaut%20style.png
+![control test suite - Defaut style](/exemples/examples/controls_test_suite/controls%20test%20suite%20-%20defaut%20style.png)
 
-https://github.com/ryback08/naylibgui/blob/main/exemples/examples/controls_test_suite/controls%20test%20suite%20-%20dark%20style.png
+![control test suite- Dark Style](/exemples/examples/controls_test_suite/controls%20test%20suite%20-%20dark%20style.png)
 
